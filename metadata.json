@@ -1,0 +1,5 @@
+{
+  "name": "Hyperliquid 分析看板",
+  "description": "$HYPE 代币持有者聚类分析看板，追踪巨鲸动向、散户分布及官方钱包监控。",
+  "requestFramePermissions": []
+}

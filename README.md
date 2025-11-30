@@ -1,11 +1,61 @@
-<div align="center">
+# HyperAnalytics Dashboard 🚀
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+HyperAnalytics 是一个为 Hyperliquid 生态系统量身定制的高级数据分析看板前端。它采用深色玻璃拟态设计风格，旨在为用户提供关于 $HYPE 代币持有者、巨鲸动向以及合约市场数据的深度聚类分析可视化。
 
-  <h1>Built with AI Studio</h2>
+## 📸 界面预览
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+整体布局采用经典的 **Admin Dashboard** 结构，分为左侧导航栏 (Sidebar) 和右侧主内容区 (Main Content)。
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 1. 侧边栏 (Sidebar) - 核心导航
+侧边栏是应用的核心控制器，采用了**双模态设计**，允许用户在“现货”和“合约”两个平行的市场上下文中无缝切换。
 
-</div>
+*   **Header**: 顶部展示 Hyperliquid 官方 Logo 和应用名称。
+*   **全局视图**: 提供“全景概览”和“官方 & 项目方”两个顶层入口。
+*   **市场切换器 (Tabs)**:
+    *   **现货 (SPOT)**: 聚焦于代币持有量 (HYPE Balance) 和质押情况。
+    *   **合约 (PERPS)**: 聚焦于未平仓合约 (Open Interest) 和未实现盈亏 (PnL)。
+    *   *交互亮点*：切换 Tab 时，下方的子菜单会自动保留用户的层级选择（例如从“现货-巨鲸”切换到合约时，自动跳转至“合约-巨鲸”）。
+*   **聚类分层**:
+    *   💎 **巨鲸 (Whale)**: 市场顶级资金持有者。
+    *   👛 **中户 (Mid)**: 中坚力量/专业交易员。
+    *   🌱 **散户 (Retail)**: 广大的社区用户群体。
+*   **底部信息**: 清晰标注数据来源（HypurrScan API / Official API），增强数据可信度。
+
+### 2. 主内容区 (Main Content) - 数据可视化
+右侧区域采用**卡片式布局 (Card-based Layout)**，强调信息的层级感和可读性。
+
+#### A. 顶部 KPI 看板
+*   展示核心市场指标：`已追踪总量`、`全网质押率`、`空投留存率`、`24H 交易量`。
+*   每个卡片包含趋势指标（↑/↓）和图标辅助，一目了然。
+
+#### B. 分析师笔记 (Contextual Insight)
+*   仅在“全景概览”视图下出现。
+*   采用高亮渐变背景，模仿专业研报的摘要形式，提供对当前市场数据的文字解读（如筹码集中度、抛压预警等）。
+
+#### C. 数据表格 (Data Table) - 左侧大屏
+*   占据主视图 2/3 的宽度。
+*   **动态列 (Dynamic Columns)**: 表格内容根据 Sidebar 的选择智能变化。
+    *   *现货模式*: 显示 总持仓、已质押、流动余额。
+    *   *合约模式*: 显示 合约持仓 (OI)、未实现盈亏 (PnL)、钱包余额。
+*   支持地址格式化、复制/外链图标等交互细节。
+
+#### D. 可视化图表 (Charts) - 右侧侧栏
+*   **持仓分布饼图 (Pie Chart)**: 清晰展示官方、巨鲸、中户、散户的筹码占比。
+*   **结构堆叠柱状图 (Stacked Bar Chart)**: 针对当前列表的前 5 名地址，直观展示其资产结构（质押 vs 流动），帮助用户判断大户的长期持有意愿。
+
+## 🛠 技术栈与设计规范
+
+*   **框架**: React 18 + TypeScript
+*   **样式**: Tailwind CSS (利用 `dark` 模式实现深色主题)
+*   **图表**: Recharts (响应式、高性能)
+*   **图标**: Lucide React (风格统一的线性图标)
+*   **字体**: Noto Sans SC (优化中文显示体验)
+*   **配色系统**:
+    *   `Hyper Dark (#0B1217)`: 背景基调
+    *   `Hyper Teal (#2DD4BF)`: 品牌主色，用于高亮和交互
+    *   `Hyper Green (#22C55E)`: 正向指标/上涨
+    *   `Hyper Card (#151E25)`: 卡片背景，微弱的边框光晕
+
+---
+
+这个布局不仅美观，更注重**信息密度**与**交互逻辑**的平衡，专为加密货币市场的深度数据分析场景打造。
