@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ClusterType } from '../types';
-import { Squares2X2Icon, BuildingLibraryIcon, SparklesIcon, WalletIcon, CircleStackIcon } from '@heroicons/react/24/outline';
+import { Squares2X2Icon, BuildingLibraryIcon, SparklesIcon, BanknotesIcon, ScissorsIcon } from '@heroicons/react/24/outline';
 
 interface SidebarProps {
   activeView: ClusterType;
@@ -42,9 +42,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) =
   const midType = marketTab === 'SPOT' ? ClusterType.SPOT_MID : ClusterType.PERP_MID;
   const retailType = marketTab === 'SPOT' ? ClusterType.SPOT_RETAIL : ClusterType.PERP_RETAIL;
 
-  const whaleLabel = marketTab === 'SPOT' ? '巨鲸大户' : '巨鲸大户';
-  const midLabel = marketTab === 'SPOT' ? '中层用户' : '合约高手';
-  const retailLabel = marketTab === 'SPOT' ? '散户群体' : '高频/散户';
+  const whaleLabel = marketTab === 'SPOT' ? '巨鲸' : '巨鲸';
+  const midLabel = marketTab === 'SPOT' ? '中产' : '中产';
+  const retailLabel = marketTab === 'SPOT' ? '小散' : '小散';
 
   const navItemClass = (isActive: boolean) => `w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
     ? 'bg-hyper-teal/10 text-hyper-teal border border-hyper-teal/20'
@@ -87,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) =
         </div>
 
         {/* Separator */}
-        <div className="h-px bg-hyper-border/50 mx-2 my-4"></div>
+        <div className="border-t border-hyper-border mx-2 my-4"></div>
 
         {/* Market Tabs */}
         <div className="mx-2 mb-4 bg-[#0F161C] p-1 rounded-lg flex border border-hyper-border/50">
@@ -118,14 +118,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) =
             onClick={() => setActiveView(midType)}
             className={navItemClass(activeView === midType)}
           >
-            <WalletIcon className="w-[18px] h-[18px]" />
+            <BanknotesIcon className="w-[18px] h-[18px]" />
             <span>{midLabel}</span>
           </button>
           <button
             onClick={() => setActiveView(retailType)}
             className={navItemClass(activeView === retailType)}
           >
-            <CircleStackIcon className="w-[18px] h-[18px]" />
+            <ScissorsIcon className="w-[18px] h-[18px]" />
             <span>{retailLabel}</span>
           </button>
         </div>
