@@ -39,16 +39,17 @@ HyperAnalytics 是一个为 Hyperliquid 生态系统量身定制的高级数据�
     *   *合约模式*: 显示 合约持仓 (OI)、未实现盈亏 (PnL)、钱包余额。
 *   支持地址格式化、复制/外链图标等交互细节。
 
+
 #### D. 可视化图表 (Charts) - 右侧侧栏
 *   **持仓分布饼图 (Pie Chart)**: 清晰展示官方、巨鲸、中户、散户的筹码占比。
 *   **结构堆叠柱状图 (Stacked Bar Chart)**: 针对当前列表的前 5 名地址，直观展示其资产结构（质押 vs 流动），帮助用户判断大户的长期持有意愿。
 
 ## 🛠 技术栈与设计规范
 
-*   **框架**: React 18 + TypeScript
+*   **框架**: React 19 + TypeScript
 *   **样式**: Tailwind CSS (利用 `dark` 模式实现深色主题)
-*   **图表**: Recharts (响应式、高性能)
-*   **图标**: Lucide React (风格统一的线性图标)
+*   **图表**: ECharts (echarts-for-react) - 强大的交互式图表库
+*   **图标**: Heroicons (风格统一的线性图标，Tailwind 官方推荐)
 *   **字体**: Noto Sans SC (优化中文显示体验)
 *   **配色系统**:
     *   `Hyper Dark (#0B1217)`: 背景基调

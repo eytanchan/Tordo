@@ -1,16 +1,16 @@
 import React from 'react';
 import { MetricCardProps } from '../types';
-import { ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react';
+import { ArrowUpRightIcon, ArrowDownRightIcon, MinusIcon } from '@heroicons/react/24/outline';
 
 export const DashboardCard: React.FC<MetricCardProps> = ({ title, value, subValue, trend, icon }) => {
-  let TrendIcon = Minus;
+  let TrendIcon = MinusIcon;
   let trendColor = 'text-gray-500';
 
   if (trend === 'up') {
-    TrendIcon = ArrowUpRight;
+    TrendIcon = ArrowUpRightIcon;
     trendColor = 'text-hyper-green';
   } else if (trend === 'down') {
-    TrendIcon = ArrowDownRight;
+    TrendIcon = ArrowDownRightIcon;
     trendColor = 'text-red-500';
   }
 
@@ -23,14 +23,14 @@ export const DashboardCard: React.FC<MetricCardProps> = ({ title, value, subValu
       <div>
         <div className="text-2xl font-bold text-hyper-white mb-1">{value}</div>
         <div className="flex items-center text-sm">
-            {subValue && (
-                <>
-                <span className={`flex items-center ${trendColor} mr-2`}>
-                    <TrendIcon size={16} className="mr-1" />
-                </span>
-                <span className="text-gray-400">{subValue}</span>
-                </>
-            )}
+          {subValue && (
+            <>
+              <span className={`flex items-center ${trendColor} mr-2`}>
+                <TrendIcon className="w-4 h-4 mr-1" />
+              </span>
+              <span className="text-gray-400">{subValue}</span>
+            </>
+          )}
         </div>
       </div>
     </div>
