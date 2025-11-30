@@ -9,16 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "@heroicons/react": "^2.1.5",
     "echarts": "^5.5.0",
     "echarts-for-react": "^3.0.2",
-    "@heroicons/react": "^2.1.5",
-    "prop-types": "15.8.1"
+    "prop-types": "15.8.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "tsx": "^4.20.6",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }
