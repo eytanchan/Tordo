@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# local files
+hype_holders_optimized.csv
+fetch_optimized.py
+info.md
+info_data
